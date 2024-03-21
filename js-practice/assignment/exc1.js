@@ -1,7 +1,11 @@
 function bank() {
     var bankBalance = 1000;
-    function withdrawBalance(amount) {
-        bankBalance -= amount;
-        return bankBalance;
-    }
+    return (
+        function withdrawBalance(amount) {
+            bankBalance -= amount;
+            return bankBalance;
+        }
+    )
 }
+var myBank = bank();
+console.log(myBank(100));
