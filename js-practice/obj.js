@@ -22,3 +22,6 @@ var {name:nm, age:ag, myMethod:mm,email:em="John@gamil.co",...others} = myObj;
 
 console.log(em)
 console.log(myObj.myMethod())
+for(key in myObj) {
+    console.log(`${key} : ${myObj[key]}`)
+}
