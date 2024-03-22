@@ -11,4 +11,4 @@ for(let i = 0; i < (Object.keys(items).length); i++) {
         temp = items[Object.keys(items)[i]];
     }
 }
-console.log(`${Object.keys(items).find(key => items[key] === temp)} was the most expensive item stolen which cost ₹${temp}`);
+console.log(`${Object.keys(items).find(key => items[key] === temp)} was the most expensive item stolen which costed ₹${temp}`);
