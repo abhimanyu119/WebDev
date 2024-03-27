@@ -6,9 +6,19 @@ var items = {
     "Laptop": 60000
 };
 var temp = 0;
-for(let i = 0; i < (Object.keys(items).length); i++) {
-    if(items[Object.keys(items)[i]] > temp) {
-        temp = items[Object.keys(items)[i]];
+
+//Array method
+// for(let i = 0; i < (Object.keys(items).length); i++) {
+//     if(items[Object.keys(items)[i]] > temp) {
+//         temp = items[Object.keys(items)[i]];
+//     }
+// }
+// console.log(`${Object.keys(items).find(key => items[key] === temp)} was the most expensive item stolen which costed ₹${temp}`);
+
+for(element in items) {
+    if(items[element] > temp) {
+        temp = items[element];
+        var ftemp = element;
     }
 }
-console.log(`${Object.keys(items).find(key => items[key] === temp)} was the most expensive item stolen which costed ₹${temp}`);
+console.log(`The most expensive item was ${ftemp} and it costed ₹${temp}`)
