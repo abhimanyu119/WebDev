@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para1">Hello<span></span> World</p>
+    <p id="para1">Hello World 2</p>
+    <p class="para">Hello World 3</p>
+    <p class="para">Hello World 4</p>
+    <p class="para">Hello World 5</p>
+    <P>Hello World 6</P>
+    <P name="name">Hello World 7</P>
+    <P>Hello World 8</P>
+    <button onclick="">Click Me</button>
+    <script>
+        // alert("Hello World")
+        // var a = window.confirm("Are you sure you want to delete this?")
+        // document.write(a)
+        // var a = parseInt(window.prompt("Are you sure you want to delete this?"))
+        // document.write(a)
+        // document.write(window.location.href)
+        function myFun()
+        {
+            // console.log(document.getElementById("para").innerHTML)
+            // console.log(document.getElementById("para").innerText)
+            // document.getElementById("para1").innerHTML = "Changing text through dom."
+            console.log(document.querySelectorAll("p"))
+            var a = document.getElementsByClassName("para")
+            for(i=0;i<a.length;i++)
+            {
+                a[i].innerHTML = "Changing text through dom."
+                a[i].style.color = "white"
+                a[i].style.backgroundColor = "black"
+            }
+           
+        }
+
+    </script>
+</body>
+</html>

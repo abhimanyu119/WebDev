@@ -4,9 +4,21 @@ var myArray2 = [60, 70, 80, 90, 100];
 // myArray1.slice(1,3)
 // console.log(myArray1);
 
-var myArray3 = myArray1.concat(myArray2);
+var myArray3 = [563,3544,115,15,19,12,25,76,430000,23,98]
+// myArray3.sort((a,b)=>
+// {
+//     return a-b;
+// }
+// )
+// console.log(myArray3)
 
-console.log(myArray3)
+// console.log(myArray3.findIndex((el)=>{
+//     return el>40000;
+// }))
+
+// var myArray3 = myArray1.concat(myArray2);
+
+// console.log(myArray3)
 
 // console.log(myArray1.some((el)=>{
 //     return el>200;
