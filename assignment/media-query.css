@@ -5,7 +5,7 @@ body {
     margin:0;
 }
 .main-container {
-    border: 1px solid rgba(202, 48, 48, 0.144);
+    border: 1px solid rgba(0, 0, 0, 0.144);
     padding:15px;
     background-color: rgb(255, 255, 255);
     position:fixed;
@@ -49,17 +49,39 @@ body {
     white-space: nowrap;
     background-color: white;
 }
-/* .main-container.dark, .sub-container h2.dark, .nav-container ul.dark, .logo.dark {
-    background-color: #000000 !important;
-    color: #3ea844;
-} */
 body.dark {
-    background-color: black !important;
+    background-color:#080808 ;
 }
-/* .nav-container ul li a.dark {
-    background-color: #7e7777 !important;
-    color: rgb(0, 0, 0) !important;
-} */
+body.dark .main-container, body.dark #sub-container h2, body.dark .nav-container ul, body.dark .logo {
+    background-color: #000000;
+    color: #3ea844;
+}
+body.dark .nav-container ul li a {
+    background-color: #8f8f8f;
+    color: rgb(0, 0, 0);
+}
+body.dark #sub-container h2 {
+    color: #c6c6c6;
+}
+body.dark .btn {
+    background-color: #3ea844;
+    color: white;
+}
+body.dark #sub-heading-container h1 {
+    color: #c6c6c6;
+}
+body.dark #toggle-dark-mode {
+    background-color: black;
+    color: white;
+}
+body.dark .nav-container ul li a:hover {
+    background-color: #1a1a1a;
+    color: white;
+}
+body.dark footer {
+    
+    background: linear-gradient(53deg, rgba(14,74,46,1) 0%, rgba(41,69,71,1) 50%, rgba(13,43,69,1) 100%);
+}
 .nav-container ul li {
     text-decoration: none;
     display:inline-block;
@@ -93,6 +115,11 @@ body.dark {
     font-weight:100;
     font-size: 5.5vh;
     color:#515151ec;
+}
+#toggle-dark-mode {
+    float:right;
+    border: 1px solid rgb(153, 153, 153);
+    border-radius: 3px;
 }
 footer {
     position:relative;
@@ -178,6 +205,9 @@ footer {
     border-radius: 5px;
 }
 @media screen and (max-width: 1000px) {
+    #toggle-dark-mode {
+        visibility: hidden;
+    }
     .image-grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
@@ -226,7 +256,6 @@ footer {
 @media screen and (max-width: 700px) {
     .nav-container {
         visibility: hidden;
-        
         transform: translateX(100%);
     }
     #home-button {
@@ -247,7 +276,4 @@ footer {
         margin-top: 140px;
     }
     
-}
-.btn {
-    float:right;
 }

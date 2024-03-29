@@ -1,6 +1,5 @@
-var darkMode = false;
-
-document.getElementById('toggle-dark-mode').addEventListener('click',switchTheme)
+var darkMode = true;
+document.body.classList.remove("dark");
 
 function switchTheme() {
     if (darkMode == true) {
@@ -12,3 +11,4 @@ function switchTheme() {
     }
     darkMode = !darkMode;
 }
+document.getElementById('toggle-dark-mode').addEventListener('click',switchTheme)
