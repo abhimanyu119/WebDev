@@ -7,7 +7,7 @@
         div {
             width: 50vw;
             height: 50vh;
-            background-color: red;
+            background-color: blue;
         }
     </style>
 </head>
@@ -20,27 +20,23 @@
     <script>
         // document.getElementById("div1").addEventListener('mouseenter',myFun);
         // document.getElementById("div1").addEventListener('mouseleave',myFun2);
+        document.getElementById("div1").addEventListener('mousemove',myFun);
         document.getElementById("div1").addEventListener('mousemove',myFun2);
-        // function myFun() {
-        //     document.getElementById("div1").style.backgroundColor = 'blue';
-        // }
-        function myFun2(event) {
-            document.getElementById("heading1").innerText = event.clientX + " " + event.clientY;
+        function myFun(event) {
+            // document.getElementById("heading1").innerText = event.clientX + " " + event.clientY;
             document.getElementById("x").innerText = event.clientX;
             document.getElementById("y").innerText = event.clientY;
         }
-        // var i = 0;
-        // function myFun2(event) {
-        //     document.getElementById("heading1").innerText = i++;
-        //     if(i == 100 && i % 100 == 0) {
-        //         i=0
-        //         document.getElementById("div1").style.backgroundColor = 'blue';
-        //     }
-        //     else if(i == 100 && i % 200 != 0) {
-        //         i=100
-        //         document.getElementById("div1").style.backgroundColor = 'red';
-        //     }
-        // }
+        var i = 0;
+        function myFun2(event) {
+            document.getElementById("heading1").innerText = i++;
+            if(i % 100 == 0 && (i/100) % 2 ==0) {
+                document.getElementById("div1").style.backgroundColor = 'blue';
+            }
+            else if(i % 100 == 0 && (i/100) % 2 !=0) {
+                document.getElementById("div1").style.backgroundColor = 'red';
+            }
+        }
     </script>
 </body>
 </html>
