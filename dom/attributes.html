@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="myImg" src="https://picsum.photos/200/400" alt="Placeholder Image" title="This is a placeholder image" width="150" height="150">
+    <img id="myImg2" src="https://picsum.photos/200/200" alt="Placeholder Image" title="This is a placeholder image" width="150" height="150">
+    <img id="myImg3" src="https://picsum.photos/200/300" alt="Placeholder Image" title="This is a placeholder image" width="150" height="150">
+    <button onclick="myFun()">Click Me</button>
+    <script>
+        console.log(document.getElementById("myImg").attributes);
+        function myFun() {
+            document.getElementById("myImg").setAttribute("width","300");
+            document.getElementById("myImg").setAttribute("height","300");
+            document.getElementById("myImg2").setAttribute("width","300");
+            document.getElementById("myImg2").setAttribute("height","400");
+            console.log(document.getElementById("myImg3").getAttribute("src"))
+            
+            // var x = document.getElementById("myImg").attributes;
+            // var txt = "";
+            // var i;
+            // for (i = 0; i < x.length; i++) {
+            //     txt = txt + x[i].name + " = " + x[i].value + "<br>" + document.getElementById("myImg").hasAttribute("srckjk");
+            // }
+            // document.body.innerHTML = txt;
+            
+        }
+    </script>
+</body>
+</html>

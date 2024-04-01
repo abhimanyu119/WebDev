@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50vw;
+            height: 50vh;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h1>Total number: <span id="heading1"></span></h1>
+    </div>
+    <p>X Co-ordinates are : <span id="x"></span></p>
+    <p>Y Co-ordinates are : <span id="y"></span></p>
+    <script>
+        // document.getElementById("div1").addEventListener('mouseenter',myFun);
+        // document.getElementById("div1").addEventListener('mouseleave',myFun2);
+        document.getElementById("div1").addEventListener('mousemove',myFun2);
+        // function myFun() {
+        //     document.getElementById("div1").style.backgroundColor = 'blue';
+        // }
+        function myFun2(event) {
+            document.getElementById("heading1").innerText = event.clientX + " " + event.clientY;
+            document.getElementById("x").innerText = event.clientX;
+            document.getElementById("y").innerText = event.clientY;
+        }
+        // var i = 0;
+        // function myFun2(event) {
+        //     document.getElementById("heading1").innerText = i++;
+        //     if(i == 100 && i % 100 == 0) {
+        //         i=0
+        //         document.getElementById("div1").style.backgroundColor = 'blue';
+        //     }
+        //     else if(i == 100 && i % 200 != 0) {
+        //         i=100
+        //         document.getElementById("div1").style.backgroundColor = 'red';
+        //     }
+        // }
+    </script>
+</body>
+</html>
