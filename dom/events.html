@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="d">
+        <p>Click me</p>
+        </div> -->
+        <label>Input A:</label>
+        <input id="in1" type="text">
+        <label>Input B:</label>
+        <input id="in2" type="text">
+        <!-- <button id="button" onclick="myFun()">Click Me</button> -->
+        <script>
+            // document.getElementById('d').addEventListener('keypress',myFun);
+            // function myFun(event) {
+            //     console.log(event);
+            // }
+            document.getElementById('in1').addEventListener("keypress",myFun);
+            function myFun(e)
+            {
+                // e.preventDefault();
+                console.log(e.which)
+                var a = document.getElementById('in1').value;
+                document.getElementById('in2').value = a
+            }
+            
+        </script>
+</body>
+</html>

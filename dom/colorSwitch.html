@@ -8,6 +8,8 @@
     button {
         width: 150px;
         height: 40px;
+        border: 3px solid black;
+        border-radius: 10px;
         background: transparent;
         font-size: 20px;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -23,8 +25,8 @@
             switch (i) {
                 case "red":
                     document.body.style.backgroundColor = "red";
+                    case "green":
                     break;
-                case "green":
                     document.body.style.backgroundColor = "green";
                     break;
                 case "blue":
@@ -48,6 +50,7 @@
                 case "black":
                     document.body.style.backgroundColor = "black";
                     document.getElementById("ch-button").style.color = "white";
+                    document.getElementById("ch-button").style.border = "3px solid white";
                     break;
                 case "grey":
                     document.body.style.backgroundColor = "grey";
