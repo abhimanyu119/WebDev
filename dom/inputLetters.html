@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Input: </label>
+    <input id="inp" type="text">
+    <script>
+        document.getElementById("inp"),addEventListener("keypress",isCapital);
+        function isCapital(e) {
+            console.log(e.key);
+            if((e.key) >= 'a' && (e.key) <= 'z') {
+                e.preventDefault();
+            }
+        }
+    </script>
+</body>
+</html>

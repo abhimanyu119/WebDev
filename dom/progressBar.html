@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form</title>
+</head>
+<style>
+  #progress-bar {
+    width: 0;
+    max-width: 100%;
+    background-color: green;
+    height: 20px;
+  }
+  form {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+</style>
+<body>
+  <div id="progress-bar">
+
+  </div>
+  <form>
+    <label for="input1">Input 1:</label>
+    <input type="text" id="input1" name="input1"><br><br>
+
+    <label for="input2">Input 2:</label>
+    <input type="text" id="input2" name="input2"><br><br>
+
+    <label for="input3">Input 3:</label>
+    <input type="text" id="input3" name="input3"><br><br>
+
+    <label for="input4">Input 4:</label>
+    <input type="text" id="input4" name="input4"><br><br>
+
+    <label for="input5">Input 5:</label>
+    <input type="text" id="input5" name="input5"><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+  <script>
+    const form = document.querySelector('form');
+    const progressBar = document.querySelector('#progress-bar');
+    form.addEventListener('keypress', (e) => {
+      let count = 0;
+      const inputs = document.querySelectorAll('input');
+      let progressBlocks = 100/(inputs.length-1);
+      inputs.forEach(input => {
+        if (input.value) {
+          count++;
+        }
+      });
+      progressBar.style.width = `${progressBlocks * count}%`;
+    });
+  </script>
+</body>
+</html>
