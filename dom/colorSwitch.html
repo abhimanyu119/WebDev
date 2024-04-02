@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 30px;
+    }
+</style>
+<body>
+    <button onclick="getInfo()">Switch Color</button>
+    <script>
+        function getInfo() {
+            var i = parseInt(window.prompt("Enter a number(1-7):"))
+            changeColor();
+        function changeColor() {
+            switch (i) {
+                case 1:
+                    document.body.style.backgroundColor = "red";
+                    break;
+                case 2:
+                    document.body.style.backgroundColor = "green";
+                    break;
+                case 3:
+                    document.body.style.backgroundColor = "blue";
+                    break;
+                case 4:
+                    document.body.style.backgroundColor = "yellow";
+                    break;
+                case 5:
+                    document.body.style.backgroundColor = "purple";
+                    break;
+                case 6:
+                    document.body.style.backgroundColor = "orange";
+                    break;
+                case 7:
+                    document.body.style.backgroundColor = "pink";
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
