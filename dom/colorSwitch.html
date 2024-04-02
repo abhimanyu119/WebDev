@@ -6,39 +6,58 @@
 </head>
 <style>
     button {
-        width: 100px;
-        height: 30px;
+        width: 150px;
+        height: 40px;
+        background: transparent;
+        font-size: 20px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
 </style>
 <body>
-    <button onclick="getInfo()">Switch Color</button>
+    <button id="ch-button" onclick="getInfo()">Switch Color</button>
     <script>
         function getInfo() {
-            var i = parseInt(window.prompt("Enter a number(1-7):"))
+            var i = (window.prompt("Enter a number(1-7):"))
             changeColor();
         function changeColor() {
             switch (i) {
-                case 1:
+                case "red":
                     document.body.style.backgroundColor = "red";
                     break;
-                case 2:
+                case "green":
                     document.body.style.backgroundColor = "green";
                     break;
-                case 3:
+                case "blue":
                     document.body.style.backgroundColor = "blue";
                     break;
-                case 4:
+                case "yellow":
                     document.body.style.backgroundColor = "yellow";
                     break;
-                case 5:
+                case "purple":
                     document.body.style.backgroundColor = "purple";
                     break;
-                case 6:
+                case "orange":
                     document.body.style.backgroundColor = "orange";
                     break;
-                case 7:
+                case "pink":
                     document.body.style.backgroundColor = "pink";
                         break;
+                case "white":
+                    document.body.style.backgroundColor = "white";
+                    break;
+                case "black":
+                    document.body.style.backgroundColor = "black";
+                    document.getElementById("ch-button").style.color = "white";
+                    break;
+                case "grey":
+                    document.body.style.backgroundColor = "grey";
+                    break;
+                case "brown":
+                    document.body.style.backgroundColor = "brown";
+                    break;
+                default:
+                    alert("Invalid color!");
+                    break;
                 }
             }
         }
