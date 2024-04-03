@@ -9,15 +9,29 @@
     max-width: 100%;
     background-color: green;
     height: 20px;
+    transition: ease-in-out 400ms;
+    text-align: end;
+    margin-right:10px;
+    border-radius: 7px;
+  }
+  #progress {
+    color: white;
+    padding-right: 10px;
   }
   form {
     margin-top: 20px;
     margin-left: 20px;
   }
+  #submmit-button {
+    margin-left: 55px;
+  }
+
 </style>
 <body>
   <div id="progress-bar">
-
+    <p>
+      <span id="progress"></span>
+    </p>
   </div>
   <form>
     <label for="input1">Input 1:</label>
@@ -35,21 +49,26 @@
     <label for="input5">Input 5:</label>
     <input type="text" id="input5" name="input5"><br><br>
 
-    <input type="submit" value="Submit">
+    <input id="submmit-button" type="submit" value="Submit">
   </form>
   <script>
     const form = document.querySelector('form');
     const progressBar = document.querySelector('#progress-bar');
-    form.addEventListener('keypress', (e) => {
-      let count = 0;
-      const inputs = document.querySelectorAll('input');
-      let progressBlocks = 100/(inputs.length-1);
+    form.addEventListener('input', () => {
+      var count = 0;
+      const inputs = document.querySelectorAll('input[type="text"]');
+      var progressBlocks = 100/(inputs.length);
       inputs.forEach(input => {
         if (input.value) {
           count++;
         }
+        console.log(count);
       });
-      progressBar.style.width = `${progressBlocks * count}%`;
+      progressBar.style.width = `${parseInt(progressBlocks * count)}%`;
+      if((progressBar.style.width) == 0) {
+        document.getElementById('progress').setAttribute('style', 'display: none;');
+      }
+      document.getElementById('progress').innerText = (progressBar.style.width);
     });
   </script>
 </body>
