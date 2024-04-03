@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="jquery/jquery-ui.css" rel="stylesheet">
+    <script src="jquery/jquery-3.7.1.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="progressbar"></div>
+    <script>
+        $( function() {
+    $( "#progressbar" ).progressbar({
+      value: 10
+    });
+  } );
+//   $("#progressbar").progressbar("option", "value", 50);
+$("#progressbar").draggable();
+
+document.getElementById("progressbar").addEventListener("click", function() {
+
+    $("#progressbar").click(function() {
+        var value = $("#progressbar").progressbar("value");
+        $("#progressbar").progressbar("value", value + 10);
+      });
+    });
+    </script>
+</body>
+</html>

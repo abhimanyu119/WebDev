@@ -22,7 +22,7 @@
     margin-top: 20px;
     margin-left: 20px;
   }
-  #submmit-button {
+  #submit-button {
     margin-left: 55px;
   }
 
@@ -49,12 +49,14 @@
     <label for="input5">Input 5:</label>
     <input type="text" id="input5" name="input5"><br><br>
 
-    <input id="submmit-button" type="submit" value="Submit">
+    <input id="submit-button" type="submit" value="Submit">
   </form>
   <script>
     const form = document.querySelector('form');
     const progressBar = document.querySelector('#progress-bar');
-    form.addEventListener('input', () => {
+    document.getElementById("submit-button").addEventListener("click", executeProgressBar);
+    function executeProgressBar(e) {
+      e.preventDefault();
       var count = 0;
       const inputs = document.querySelectorAll('input[type="text"]');
       var progressBlocks = 100/(inputs.length);
@@ -69,7 +71,7 @@
         document.getElementById('progress').setAttribute('style', 'display: none;');
       }
       document.getElementById('progress').innerText = (progressBar.style.width);
-    });
+      }
   </script>
 </body>
 </html>
