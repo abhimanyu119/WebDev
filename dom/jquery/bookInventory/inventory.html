@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Manager</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        padding: 10px;
+    }
+    .container {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-between;
+        padding:10px;
+        gap: 2rem;
+        max-width:60%;
+    }
+    .sub-container {
+        margin:auto;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .book-img {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        border-radius: 5px 5px 0 0;
+    }
+    .book-text {
+        margin-left: 20px;
+    }
+    #calculate-btn {
+        margin-left:10px;
+        margin-top:10px;
+        border: 1px solid black;
+        background-color: #bbbbbb;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    .inv-data {
+        margin: 30px 10px 10px 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding-bottom: 10px;
+    }
+    #inv-data-text {
+        margin-left:10px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #inv-data-table {
+        margin-left: 10px;
+        border-radius: 5px;
+        border-collapse: collapse;
+    }
+    #inv-data-table  th {
+        padding: 5px 15px 5px 15px;
+    }
+</style>
+<body>
+    <header>
+        <h1 id="main-heading">Inventory</h1>
+    </header>
+    <div class="container">
+        <div class="sub-container">
+            <img class="book-img" src="media/book-img1.jpeg" alt="Book Image">
+            <p class="book-text">Price: ₹579</p>
+        </div>
+        <div class="sub-container">
+            <img class="book-img" src="media/book-img2.jpeg" alt="Book Image">
+            <p class="book-text">Price: ₹449</p>
+        </div>
+        <div class="sub-container">
+            <img class="book-img" src="media/book-img3.jpeg" alt="Book Image">
+            <p class="book-text">Price: ₹799</p>
+        </div>
+    </div>
+    <button id="calculate-btn">Calculate</button>
+    <div class="inv-data">
+        <p id="inv-data-text">Total Price: </p>
+        <table id="inv-data-table" border="1">
+            <tr>
+                <th>Book</th>
+                <th>Price</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
