@@ -11,16 +11,20 @@ body {
 }
 header {
     text-align: center;
-    font-family:'Open Sans', sans-serif;
-    font-size: 30px;
-    font-weight: 100;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 50px;
+    margin:0px;
     padding: 5px;
-    background: linear-gradient(53deg, rgba(186,144,178,1) 0%, rgba(139,81,176,1) 50%, rgba(146,124,185,1) 100%);
+    z-index:9999;
+    background: linear-gradient(0deg, rgba(140,109,135,1) 0%, rgba(87,62,105,1) 50%, rgba(51,40,69,1) 100%);
     color:rgb(255, 255, 255);
     position:sticky;
     top:0;
-    text-shadow: 3px 5px 7px #000000;
+    text-shadow: 3px 1px 1px black;
     box-shadow: 0px 10px 15px #797979;
+}
+#main-heading {
+    margin:30px 0px 30px 0px;
 }
 .container {
     display: flex;
@@ -38,9 +42,17 @@ header {
     box-shadow: 0px 0px 5px 5px #7a7a7a;
     cursor:pointer;
 }
+.sub-container:hover {
+    background-color: black;
+    color:white;
+    transform: scale(103%);
+}
 .sub-container.active {
     border: 1px solid #000000;
     box-shadow: 0px 0px 15px 10px #000000;
+    background-color: black;
+    color:white;
+    transform: scale(103%);
     transition: all 200ms;
 }
 .sub-container:not(.active) {

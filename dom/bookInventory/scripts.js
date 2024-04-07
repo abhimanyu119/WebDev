@@ -30,6 +30,8 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
         }
     }
     document.getElementById("total-price").innerHTML = `₹${total}`;
-    var totalCell = row.insertCell(2);
-    totalCell.innerHTML = `₹${total}`;
+    if(total !== 0) {
+        var totalCell = row.insertCell(2);
+        totalCell.innerHTML = `₹${total}`;
+    }
 });
