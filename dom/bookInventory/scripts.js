@@ -11,7 +11,7 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
     var div = document.getElementsByClassName("inv-data");
     var total = 0;
     var table = document.getElementById("inv-data-table");
-    table.innerHTML = "<tr><th>Name</th><th>Price</th><th>Total</th></tr>";
+    table.innerHTML = "<tr><th>Title</th><th>Price</th><th>Total</th></tr>";
     for(let i = 0; i < len; i++) {
         var a = document.querySelector(".img" + (i+1) + "");
         if (a !== null && a.parentElement.classList.contains('active')) {
