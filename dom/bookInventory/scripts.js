@@ -9,7 +9,6 @@ elements.forEach(element => {
 var len = document.querySelectorAll('.sub-container').length;
 document.getElementById("calculate-btn").addEventListener("click", function() {
     var div = document.getElementsByClassName("inv-data");
-    
     var total = 0;
     var table = document.getElementById("inv-data-table");
     table.innerHTML = "<tr><th>Name</th><th>Price</th><th>Total</th></tr>";
