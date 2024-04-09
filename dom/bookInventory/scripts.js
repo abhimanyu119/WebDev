@@ -35,28 +35,19 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
         totalCell.innerHTML = `₹${total}`;
     }
 });
-
-var step = 300;
-
-// Get the elements with class 'preSlide' and 'nextSlide'
-var scrollleftElements = document.querySelectorAll('.scroll-left');
-var scrollrightElements = document.querySelectorAll('.scroll-right');
-
-// Function to scroll left
-function scrollLeft(event) {
-    event.preventDefault();
-    this.scrollBy(step, 0);
-}
-
-// Function to scroll right
-function scrollRight(event) {
-    event.preventDefault();
-    this.scrollBy(-step, 0);
-}
-
-document.getElementsByClassName("scroll-left").addEventListener("click", () => {
-    document.getElementById("scroll-container").scrollBy(step, 0);
+var scrollSize = 300;
+document.querySelector(".scroll-left").addEventListener("click", function () {
+    scrollSize -= 300;
+    if (scrollSize < 0) {
+        scrollSize = 0;
+    }
+    document.getElementsByClassName("container")[0].scrollTo(scrollSize, 0);
 });
-document.getElementsByClassName("scroll-right").addEventListener("click", () => {
-    document.getElementById("scroll-container").scrollBy(-step, 0);
+document.querySelector(".scroll-right").addEventListener("click", function () {
+    scrollSize += 300;
+    var container = document.getElementsByClassName("container")[0];
+    if (scrollSize > container.scrollWidth - container.clientWidth) {
+        scrollSize = container.scrollWidth - container.clientWidth;
+    }
+    document.getElementsByClassName("container")[0].scrollTo(scrollSize, 0);
 });
