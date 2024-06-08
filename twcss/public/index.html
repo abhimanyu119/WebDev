@@ -12,25 +12,28 @@
   <div class="grid md:grid-cols-3"> <!-- Wrapper-->
     <div class="md:col-span-1 md:flex md:justify-end"> <!-- Navbar -->
       <nav class="text-right">
-        <div>
+        <div class="flex justify-between items-center">
           <h1 class="font-bold uppercase p-4 border-gray-100">
             <a href="/" class="hover:text-gray-700">Food Ninja</a>
           </h1>
+          <div class="px-4 cursor-pointer md:hidden">
+            <i class="fa-solid fa-bars" id="burger"></i>
+          </div>
         </div>
-        <ul class="text-sm mt-6">
-          <li class="text-gray-700 font-bold py-1">
+        <ul class="text-sm mt-6 hidden md:block" id="menu">
+          <li class="text-gray-700 font-bold py-1 border-r-2 border-primary">
             <a href="#" class="px-4">
               <span>Home</span>
               <i class="fa-solid fa-house ml-2"></i>
             </a>
           </li>
-          <li class="text-gray-700 font-bold py-1">
+          <li class="text-gray-700 py-1">
             <a href="#" class="px-4">
               <span>About</span>
               <i class="fa-solid fa-circle-question ml-2"></i>
             </a>
           </li>
-          <li class="text-gray-700 font-bold py-1">
+          <li class="text-gray-700 py-1">
             <a href="#" class="px-4">
               <span>Contact</span>
               <i class="fa-solid fa-envelope ml-2"></i>
@@ -43,8 +46,8 @@
 
     <main class="px-16 py-6 bg-gray-100 md:col-span-2">
       <div class="flex justify-center md:justify-end">
-        <a href="#" class="text-primary btn border-primary md:border-2 hover:bg-primary hover:text-white">Log In</a>
-        <a href="#" class="text-primary ml-2 btn border-primary md:border-2 hover:bg-primary hover:text-white">Sign Up</a>
+        <a href="#" class="text-primary btn border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-300">Log In</a>
+        <a href="#" class="text-primary ml-2 btn border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-300">Sign Up</a>
       </div>
       <header>
         <h2 class="text-gray-700 text-6xl font-semibold">Recipes</h2>
@@ -96,12 +99,12 @@
         </div>
 
         <div class="flex justify-center">
-          <div class="bg-secondary-100 text-secondary-200 btn hover:shadow-inner">Load More</div>
+          <div class="bg-secondary-100 text-secondary-200 btn hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-200">Load More</div>
         </div>
       </div>
 
     </main>
   </div>
-
+  <script src="script.js"></script>
 </body>
 </html>
