@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age and Distance Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title text-center">Age Calculator</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" class="form-control" id="dob">
+                        </div>
+                        <button class="btn btn-primary btn-block" id="calculate-age">Calculate Age</button>
+                        <div class="mt-3">
+                            <p>Age in years: <span id="years"></span></p>
+                            <p>Age in months: <span id="months"></span></p>
+                            <p>Age in hours: <span id="hours"></span></p>
+                            <p>Age in minutes: <span id="minutes"></span></p>
+                            <p>Age in seconds: <span id="seconds"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title text-center">Distance Converter</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="distance">Distance:</label>
+                            <input type="number" class="form-control" id="distance">
+                        </div>
+                        <div class="form-group">
+                            <label for="unit">Unit:</label>
+                            <select class="form-control" id="unit">
+                                <option value="km">Kilometers</option>
+                                <option value="m">Meters</option>
+                                <option value="in">Inches</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="convert">Convert</button>
+                        <div class="mt-3">
+                            <p>Distance in kilometers: <span id="km"></span></p>
+                            <p>Distance in meters: <span id="m"></span></p>
+                            <p>Distance in inches: <span id="in"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#calculate-age").click(function() {
+                var dob = $("#dob").val();
+                if (dob) {
+                    var now = new Date();
+                    var birthDate = new Date(dob);
+                    var ageInYears = now.getFullYear() - birthDate.getFullYear();
+                    var ageInMonths = ((ageInYears*12)+(now.getMonth() - birthDate.getMonth() + (now.getDate() < birthDate.getDate() ? -1 : 0)) % 12);
+                    var ageInHours = Math.floor((now - birthDate) / (1000 * 60 * 60));
+                    var ageInMinutes = Math.floor((now - birthDate) / (1000 * 60));
+                    var ageInSeconds = Math.floor((now - birthDate) / 1000);
+                    $("#years").text(ageInYears);
+                    $("#months").text(ageInMonths);
+                    $("#hours").text(ageInHours);
+                    $("#minutes").text(ageInMinutes);
+                    $("#seconds").text(ageInSeconds);
+                } else {
+                    alert("Please enter your date of birth.");
+                }
+            });
+
+            $("#convert").click(function() {
+                var distance = $("#distance").val();
+                var unit = $("#unit").val();
+                if (distance) {
+                    if (unit === "km") {
+                        $("#km").text(distance);
+                        $("#m").text(distance * 1000);
+                        $("#in").text(distance * 39370.1);
+                    } else if (unit === "m") {
+                        $("#km").text(distance / 1000);
+                        $("#m").text(distance);
+                        $("#in").text(distance * 39.37);
+                    } else if (unit === "in") {
+                        $("#km").text(distance / 39370.1);
+                        $("#m").text(distance / 39.37);
+                        $("#in").text(distance);
+                    }
+                } else {
+                    alert("Please enter the distance.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
